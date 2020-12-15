@@ -122,12 +122,12 @@
                       <span class="text-green-500 font-semibold text-lg">Dec.2</span>
                   </div>
 
-                  <div class="w-full bg-gray-100 border rounded-lg flex justify-between items-center px-4 py-2">
+                 <div class="w-full bg-gray-100 border rounded-lg flex justify-between items-center px-4 py-2 mb-4">
                       <div>
-                          <p class="font-semibold text-xl">Alex Carter</p>
-                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                          <p class="font-semibold text-xl">Alex Bartos</p>
+                          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
                       </div>
-                      <span class="text-red-500 font-semibold text-lg">Dec.5</span>
+                      <span class="text-green-500 font-semibold text-lg">Dec.2</span>
                   </div>
                 </div>
               </div>
@@ -182,7 +182,7 @@
                   <div class="w-full bg-gray-100 border rounded-lg flex justify-between items-center px-4 py-2 mb-4">
                       <div>
                           <p class="font-semibold text-xl">Joseph Brent</p>
-                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, tempore.</p>
+                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam.</p>
                       </div>
                       <span class="text-red-500 font-semibold text-lg">Dec.9</span>
                   </div>
@@ -204,7 +204,6 @@
                   </div>
                 </div>
               </div>
-
             </div>
 
     </div>
