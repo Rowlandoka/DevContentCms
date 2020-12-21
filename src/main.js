@@ -4,6 +4,7 @@ import Router from 'vue-router'
 
 import Dashboard from '@/components/Dashboard'
 import DashboardHome from '@/pages/Home'
+import Create from '@/pages/Create'
 
 import store from './store'
 
@@ -20,7 +21,8 @@ const routes = [
       { path: '/', redirect: { name: 'DashboardHome' } },
       { path: 'home', name: 'DashboardHome', component: DashboardHome }
     ]
-  }
+  }, 
+  { path: '/create', name:'create', component: Create}
 ]
 
 const router = new Router({
