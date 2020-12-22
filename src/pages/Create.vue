@@ -1,12 +1,12 @@
 <template>
-<div class="px-12 py-20 lg:px-24 bg-green-50">
+<div class=" w-full px-12 py-20 lg:px-24 bg-green-50">
   <h1 class=" w-full text-center mb-6 text-blue-500 font-semibold uppercase">Create a New Posts</h1>
-  <div class="w-full h-full bg-white rounded shadow-lg p-8 m-4 md:mx-auto">
+  <div class="w-4/5 h-full bg-white rounded shadow-lg p-8 m-4 md:mx-auto">
   <form>
     <div>
       <div>
         <div>
-          <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="post-article">Post 
+          <label class="uppercase tracking-wide text-blue-500 text-xs font-bold mb-2" for="post-article">Post 
             Title:
           </label>
           <input class="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none" v-model="post.title" type="text" name="" id="">
@@ -16,7 +16,7 @@
     <div>
       <div>
         <div>
-          <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="">Post Body:</label>
+          <label class="uppercase tracking-wide text-blue-500 text-xs font-bold mb-2" for="">Post Body:</label>
           <textarea v-model="post.body" class="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none" rows="4"></textarea>
         </div>
       </div>
