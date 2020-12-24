@@ -6,7 +6,7 @@
     <div>
       <div>
         <div>
-          <label class="uppercase tracking-wide text-blue-500 text-xs font-bold mb-2" for="post-article">Post 
+          <label class="uppercase tracking-wide text-blue-500 text-xs font-bold mb-2" for="post-article"> 
             Title:
           </label>
           <input class="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none" v-model="post.title" type="text" name="" id="">
@@ -16,14 +16,32 @@
     <div>
       <div>
         <div>
-          <label class="uppercase tracking-wide text-blue-500 text-xs font-bold mb-2" for="">Post Body:</label>
+          <label class="uppercase tracking-wide text-blue-500 text-xs font-bold mb-2" for="name">Author:
+          </label>
+          <input class="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none" v-model="post.name" type="text" name="" id="">
+        </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div>
+          <label class="uppercase tracking-wide text-blue-500 text-xs font-bold mb-2" for="name">Description:
+          </label>
+          <input class="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none" v-model="post.description" type="text" name="" id="">
+        </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div>
+          <label class="uppercase tracking-wide text-blue-500 text-xs font-bold mb-2" for="">Content:</label>
           <textarea v-model="post.body" class="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none" rows="4"></textarea>
         </div>
       </div>
     </div><br>
     <div class="-mx-3 md:flex mt-3">
       <div class="md:w-full px-3">
-      <button class="md:w-full bg-blue-500 text-white text-lg font-bold py-2 px-4 border-b-4 hover:border-b-2 border-blue-500 hover:border-blue-100 rounded-full">Create Post</button>
+        <button type="button" class="bg-blue-600 text-gray-200 font-bold text-lg rounded-full hover:bg-blue-500 px-6 py-3 focus:outline-none border-b-4 hover:border-b-2 hover:border-b-100">Create Post</button>
       </div>
     </div> 
   </form>
