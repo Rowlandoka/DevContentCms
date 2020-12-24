@@ -16,7 +16,7 @@
                 <h5 class="font-semibold text-blue-400 mb-2">Contacts</h5>
                 <ul class="leading-loose">
                     <p class="font-semibold text-gray-700 pb-2">21 Revolution Street Calabar, Nigeria</p>
-                    <p class="font-semibold text-gray-700 pb-2">+234 706 25541</p>
+                    <p class="font-semibold text-gray-700 pb-2">+234 706 255541</p>
                     <p class="font-semibold text-gray-700 pb-2"> contact@devstorecms.com</p>
                  </ul>
               </div>
