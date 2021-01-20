@@ -5,6 +5,7 @@ import Router from 'vue-router'
 import Dashboard from '@/components/Dashboard'
 import DashboardHome from '@/pages/Home'
 import Create from '@/pages/Create'
+import Index from '@/pages/Index'
 
 import store from './store'
 
@@ -22,7 +23,8 @@ const routes = [
       { path: 'home', name: 'DashboardHome', component: DashboardHome }
     ]
   },  
-  { path: '/create', name:'create', component: Create}
+  { path: '/create', name:'create', component: Create},
+  { path: '/index', name:'index', component: Index}
 ]
 
 const router = new Router({

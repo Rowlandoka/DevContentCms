@@ -51,9 +51,9 @@ export default {
   },
   methods: {
     addPost(){
-      let postURL = 'http://localhost:4000/post/create';
+      let postURL = 'https://devcontentcms.herokuapp.com/post/create';
       axios.post(postURL, this.post).then(() => {
-        this.$router.push('/dashboard')
+        this.$router.push('/index')
         this.post = {
           title: '',
           author: '',
