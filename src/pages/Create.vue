@@ -1,6 +1,25 @@
 <template>
-<div class=" w-full px-12 py-20 lg:px-24 bg-green-50">
-  <h1 class=" w-full text-center mb-6 text-blue-500 font-semibold uppercase">Create a New Posts</h1>
+<div>
+   <nav x-data="{show:false}" class="flex items-center justify-between flex-wrap bg-blue-500 p-6">
+  <div class="flex items-center flex-shrink-0 text-white mr-6">
+     <img class="h-9 w-9 mr-2" src="/img/logo.png" alt="DevContentCms Logo">
+    <span class="font-semibold text-xl tracking-tight">DevContentCms</span>
+  </div>
+  <div class="block md:hidden">
+    <button @click="show=!show" class="flex items-center px-3 py-2 border rounded text-gray-100 border-gray-200 hover:text-white hover:border-white">
+      <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+    </button>
+  </div>
+  <div @click.prevent="show = false" :class="{ 'block': show, 'hidden': !show }" class="w-full block flex-grow md:flex md:justify-end md:w-auto">
+    <div>
+          <a href="#" class="block md:inline-block text-sm px-4 py-2 leading-none rounded text-white border-white hover:border-transparent hover:text-black-500 hover:bg-black mt-4 md:mt-0">Home</a>
+        <a href="#" class="block md:inline-block text-sm px-4 py-2 leading-none rounded text-white border-white hover:border-transparent hover:text-black-500 hover:bg-black mt-4 md:mt-0">Blog</a>
+        <a href="#" class="block md:inline-block text-sm px-4 py-2 leading-none rounded text-white border-white hover:border-transparent hover:text-black-500 hover:bg-black mt-4 md:mt-0">Services</a>
+    </div>
+  </div>
+</nav>
+<div class=" w-full px-12 py-10 lg:px-24 bg-green-50">
+  <h1 class=" w-full text-center mb-6 mt-0 py-0 text-blue-500 font-semibold uppercase">Create a New Posts</h1>
   <div class="w-4/5 h-full bg-white rounded shadow-lg p-8 m-4 md:mx-auto">
   <form @submit.prevent="appPost">
        <div>
@@ -33,6 +52,7 @@
   </form>
   </div>
 </div>
+</div>
 </template>
 
 <script>
@@ -53,7 +73,7 @@ export default {
     addPost(){
       let postURL = 'https://devcontentcms.herokuapp.com/post/create';
       axios.post(postURL, this.post).then(() => {
-        this.$router.push('/index')
+        this.$router.push('/viewPost')
         this.post = {
           title: '',
           author: '',
