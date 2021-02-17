@@ -32,8 +32,9 @@ const routes = [
   { path: '/', redirect: { name: 'DashboardHome' } },
   { path: '/dashboard', component: Dashboard, children: [
       { path: '/', redirect: { name: 'DashboardHome' } },
-      { path: 'home', name: 'DashboardHome', component: DashboardHome, meta: {
-        requiresAuth: true
+      { path: 'home', name: 'DashboardHome', component: DashboardHome, beforeEnter:(to, from, next) => {
+        if(to.name !=='login') next({name:'login'})
+        else next();
       }}
     ]
   },  
@@ -49,19 +50,19 @@ const router = new Router({
   routes
 })
 
-router.beforeEach((to, from, next) => {
-  if (to.matched.some(record => record.meta.requiresAuth)) {
-    if (localStorage.getItem("jwt") == null) {
-      next({
-        path: '/login'
-      });
-    } else {
-      next();
-    }
-  } else {
-    next();
-  }
-});
+// router.beforeEach((to, from, next) => {
+//   if (to.matched.some(record => record.meta.requiresAuth)) {
+//     if (localStorage.getItem("jwt") == null) {
+//       next({
+//         path: '/'
+//       });
+//     } else {
+//       next();
+//     }
+//   } else {
+//     next();
+//   }
+// });
 new Vue({
   render: h => h(App),
   router,
