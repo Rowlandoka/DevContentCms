@@ -1,24 +1,45 @@
 <template>
-<body class="bg-gray-200">
- <nav x-data="{show:false}" class="flex items-center justify-between flex-wrap bg-indigo-400 p-5">
-  <div class="flex items-center flex-shrink-0 text-white mr-6">
+<div>
+ <nav class="relative flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-indigo-500 mb-3">
+ <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
+   <div class="w-full relative flex justify-between lg:w-auto px-4 lg:static lg:block lg:justify-start">
+     <div class="flex items-center flex-shrink-0 text-white mr-6">
      <img class="h-9 w-9 mr-2" src="/img/logo.png" alt="DevContentCms Logo">
-    <span class="font-semibold text-xl tracking-tight text-white">DevContentCms</span>
+    <span class="font-semibold text-sm tracking-tight text-white leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap">DevContentCms</span>
   </div>
-  <div class="block md:hidden">
-    <button @click="show=!show" class="flex items-center px-3 py-2 border rounded text-blue-900 border-blue-900 hover:text-blue-900 hover:border-blue-500 font-bold">
-      <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-    </button>
-  </div>
-  <div @click.prevent="show = false" :class="{ 'block': show, 'hidden': !show }" class="w-full block flex-grow md:flex md:justify-end md:w-auto">
-    <div>
-          <a href="#" class="block md:inline-block text-sm px-4 py-2 leading-none rounded text-white border-white hover:border-transparent hover:text-black-500 hover:font-bold mt-4 md:mt-0">Home</a>
-        <a href="#" class="block md:inline-block text-sm px-4 py-2 leading-none rounded text-white border-white hover:border-transparent hover:text-black-500 mt-4 md:mt-0">Blog</a>
-        <a href="#" class="block md:inline-block text-sm px-4 py-2 leading-none rounded text-white border-white hover:border-transparent hover:text-black-500 mt-4 md:mt-0">Services</a>
-        <a href="#" class="block md:inline-block text-sm px-4 py-2 leading-none rounded text-white border-white hover:border-transparent hover:text-black-500 mt-4 md:mt-0">Contact</a>
-    </div>
-     <router-link to="/register" class="toggle hidden md:flex w-full md:w-auto px-4 py-2 text-right bg-blue-600 hover:bg-blue-500 text-white md:rounded">Create Account</router-link>
-  </div>
+     <button class="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none hover:text-black" type="button" v-on:click="toggleNavbar()">
+        <svg viewBox="0 0 100 80" class="w-6 h-6 fill-current">
+        <rect width="100" height="20"></rect>
+        <rect y="30" width="100" height="20"></rect>
+        <rect y="60" width="100" height="20"></rect>
+      </svg>
+     </button>
+   </div>
+   <div v-bind:class="{'hidden': !showMenu, 'flex': showMenu}" class="lg:flex lg:flex-grow items-center">
+      <ul class="flex flex-col lg:flex-row list-none ml-auto">
+        <li class="nav-item">
+           <a class="px-3 py-2 flex items-center text-sm font-bold leading-snug text-white hover:opacity-75" href="#pablo">
+             <span class="ml-2">Home</span>
+            </a>
+        </li>
+         <li class="nav-item">
+            <a class="px-3 py-2 flex items-center text-sm font-bold leading-snug text-white hover:opacity-75" href="#pablo">
+             <span class="ml-2">Blog</span>
+            </a>
+          </li>
+            <li class="nav-item">
+            <a class="px-3 py-2 flex items-center text-sm font-bold leading-snug text-white hover:opacity-75" href="#pablo">
+              <span class="ml-2">Services</span>
+            </a>
+          </li>
+            <li class="nav-item">
+            <a class="px-3 py-2 flex items-center text-sm font-bold leading-snug text-white hover:opacity-75" href="#pablo">
+             <span class="ml-2">Contact</span>
+            </a>
+          </li>
+      </ul>
+   </div>
+ </div>
 </nav>
    <div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
     <div class="max-w-md w-full space-y-8">
@@ -41,13 +62,13 @@
           <label for="email-address" class="block text-gray-700 text-sm font-bold mb-2 mt-2 uppercase">
             Email address
           </label>
-          <input id="email-address" name="email" type="email" autocomplete="email" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Email address">
+          <input id="email-address" name="email" type="email" autocomplete="email" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Email address" v-model="login.email">
         </div>
         <div class="mb-6">
           <label for="password" class="block text-gray-700 text-sm font-bold mb-2 uppercase">
             Password
             </label>
-          <input id="password" name="password" type="password" autocomplete="current-password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password">
+          <input id="password" name="password" type="password" autocomplete="current-password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password" v-model="login.password">
         </div>
       </div>
 
@@ -80,13 +101,15 @@
     </form>
   </div>
 </div>
-</body>
+</div>
 </template>
 
 <script> 
   export default {
+     name: "indigo-navbar",
     data () {
       return {
+        showMenu: false,
         login: {
           email: '',
           password: ''
@@ -101,13 +124,17 @@
           let token = response.data.token;
           localStorage.setItem('jwt', token)
           if(token){
-            console.log('Login Successfully');
-            this.$router.push('/');
+            this.email = '';
+            this.password = '';
+            this.$router.redirect('/home');
           }
         } catch (error) {
           console.error(error)
         }
-      }
+      },
+        toggleNavbar: function(){
+      this.showMenu = !this.showMenu;
+       }
     }
   }
 

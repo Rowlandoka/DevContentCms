@@ -18,7 +18,8 @@ import store from './store'
 import '@/assets/css/tailwind.css'
 
 const base  = axios.create({
-  baseURL: 'http://localhost:4000'
+  baseURL: 'https://mobiledevcms.herokuapp.com/'
+  // baseURL: 'http://localhost:4000'
 });
 
 Vue.prototype.$http = base;
@@ -47,11 +48,12 @@ const router = new Router({
   mode: 'history',
   routes
 })
+
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
     if (localStorage.getItem("jwt") == null) {
       next({
-        path: "/login"
+        path: '/login'
       });
     } else {
       next();
@@ -60,7 +62,6 @@ router.beforeEach((to, from, next) => {
     next();
   }
 });
-
 new Vue({
   render: h => h(App),
   router,
