@@ -8,19 +8,20 @@
     <span class="font-semibold text-sm tracking-tight text-white leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap">DevContentCms</span>
   </div>
      <button class="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none hover:text-black" type="button" v-on:click="toggleNavbar()">
-        <svg viewBox="0 0 100 80" class="w-6 h-6 fill-current">
+        <svg class="h-5 w-5" v-bind:style="{ fill: 'black' }" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+        <!-- <svg viewBox="0 0 100 80" class="w-6 h-6 fill-current">
         <rect width="100" height="20"></rect>
         <rect y="30" width="100" height="20"></rect>
         <rect y="60" width="100" height="20"></rect>
-      </svg>
+      </svg> -->
      </button>
    </div>
    <div v-bind:class="{'hidden': !showMenu, 'flex': showMenu}" class="lg:flex lg:flex-grow items-center">
       <ul class="flex flex-col lg:flex-row list-none ml-auto">
         <li class="nav-item">
-           <a class="px-3 py-2 flex items-center text-sm font-bold leading-snug text-white hover:opacity-75" href="#pablo">
+           <router-link class="px-3 py-2 flex items-center text-sm font-bold leading-snug text-white hover:opacity-75" to="/home">
              <span class="ml-2">Home</span>
-            </a>
+            </router-link>
         </li>
          <li class="nav-item">
             <a class="px-3 py-2 flex items-center text-sm font-bold leading-snug text-white hover:opacity-75" href="#pablo">
